@@ -1,8 +1,7 @@
 from django.urls import path
+
 from . import views
 
 urlpatterns = [
-    # path('core/group', views.group_analysis),
+    path("first-user", views.first_user_view),
 ]
-
-
