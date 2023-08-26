@@ -1,5 +1,3 @@
-import os
-
 from .base import *
 
 DEBUG = False
@@ -19,11 +17,11 @@ INSTALLED_APPS = DEFAULT_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
 
 DATABASES = {
     "default": {
-        "ENGINE": os.environ["SCOOP_DATABASE_ENGINE"],
-        "NAME": os.environ["SCOOP_DATABASE_NAME"],
-        "USER": os.environ["SCOOP_DATABASE_USER"],
-        "PASSWORD": os.environ["SCOOP_DATABASE_PASSWORD"],
-        "HOST": os.environ["SCOOP_DATABASE_HOST"],
-        "PORT": os.environ["SCOOP_DATABASE_PORT"],
+        "ENGINE": get_env_variable("SCOOP_DATABASE_ENGINE"),
+        "NAME": get_env_variable("SCOOP_DATABASE_NAME"),
+        "USER": get_env_variable("SCOOP_DATABASE_USER"),
+        "PASSWORD": get_env_variable("SCOOP_DATABASE_PASSWORD"),
+        "HOST": get_env_variable("SCOOP_DATABASE_HOST"),
+        "PORT": get_env_variable("SCOOP_DATABASE_PORT"),
     }
 }
